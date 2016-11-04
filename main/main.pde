@@ -1,6 +1,9 @@
 //global variables
 int fc = 0;//frame counter, 60x per sec
+int toSec = 0;
+int secLeft = 0;
 boolean isRunning = false;//if game is running, things move
+boolean resetObjects = false;//if user right clicked the mouse, we then reset the position of all the objects
 
 //random rectangles: colour, pos, size
 int rrr;//colour components: red, green, blue
@@ -25,6 +28,9 @@ void setup()
   rectMode(CENTER);
   background(LIGHTBLUE);
   player.randomizePlayer();
+  drawRandRect();
+  drawRandTri();
+  drawRandElli();
 }
 
 void draw()
@@ -35,17 +41,30 @@ void draw()
   {
     println("You lost the game as your time exceeds 30 seconds!");
     isRunning = false;
+    resetObjects = true;
+    fc = 0;
   }
   
   if(isRunning)
   {
     fc++;//another frame is about to be drawn
     player.movePlayerFollowMouse();
-    println("time spent " + fc/60 + " seconds.");
+    if(fc % 60 == 0)
+    {
+      toSec = fc/60;
+      secLeft = 30 - toSec;
+      println("You already spent " + toSec + " seconds. And, you have " + secLeft + " seconds left!");
+    }
   }
-  else
+  
+  if(resetObjects)
   {
-    println("game isn't running");
+    background(LIGHTBLUE);
+    player.randomizePlayer();
+    drawRandRect();
+    drawRandTri();
+    drawRandElli();
+    resetObjects = false;
   }
   
   //draw all, all the time

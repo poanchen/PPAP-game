@@ -19,10 +19,8 @@ class c_player
   //draw the player
   void drawPlayer()
   {
-    pushMatrix();
     fill(ORANGE);//orange
     ellipse(px, py, 11, 11);
-    popMatrix();
   }
   
   //move player to follow the mouse
