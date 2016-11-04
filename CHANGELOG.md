@@ -1,3 +1,11 @@
+v1.0.2 (2016-11-04)
+======
+
+* Initially, four enemies will start at the corner. In the start of the game, each enemy will go with different direction and bounce back if they hit the wall.
+* To make sure they don't go too fast or too slow when they bounce back, I wrote a limitSpeed function to control each enemy's speed.
+* To win the game, you need to direct the little yellow dot and go through triangle, circle and rectangle without being hit by the enemies under 30 seconds.
+* Every time when you win or lose a game. The position of the objects and yourself will be reset and ready for you to play for the next round!
+
 v1.0.1 (2016-11-04)
 ======
 
