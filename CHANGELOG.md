@@ -1,3 +1,8 @@
+v1.0.3 (2016-11-06)
+======
+
+* Triangle, circle and rectangle has been replaced with pineapple and apple.
+
 v1.0.2 (2016-11-04)
 ======
 
