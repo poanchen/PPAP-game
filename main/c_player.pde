@@ -11,9 +11,8 @@ class c_player
   color ORANGE = #FFC012;
   
   //boolean value to see if the player gone through before
-  boolean object1_rectangle = false;
-  boolean object2_triangle = false;
-  boolean object3_ellipse = false;
+  boolean object1_pineapple = false;
+  boolean object2_apple = false;
   
   //randomize player pos in the screen
   void randomizePlayer()
@@ -78,22 +77,19 @@ class c_player
     return false;//no collision detected
   }
   
-  //see if player collided with any one of the enemy
+  //see if player collided with any one of the object
   boolean touchDownWithObject()
   {
     //check if player touch down any of the object
-    if(dist(px, py, rectangle_x, rectangle_y) < pSz)
+    if(dist(px, py, pineapple_x, pineapple_y) < pSz)
     {
-      object1_rectangle = true;
-    }else if(dist(px, py, triangle_x, triangle_y) < pSz)
+      object1_pineapple = true;
+    }else if(dist(px, py, apple_x, apple_y) < pSz)
     {
-      object2_triangle = true;
-    }else if(dist(px, py, ellipse_x, ellipse_y) < pSz)
-    {
-      object3_ellipse = true;
+      object2_apple = true;
     }
 
-    if(object1_rectangle && object2_triangle && object3_ellipse)
+    if(object1_pineapple && object2_apple)
     {
       return true;
     }

@@ -29,27 +29,6 @@ int bottom_left_y = 860;
 float bottom_left_x_v = random(-5, 5);
 float bottom_left_y_v = random(-5, 5);
 
-//rectangles: colour, pos, size
-int rectangle_r;
-int rectangle_g;
-int rectangle_b;
-float rectangle_x;
-float rectangle_y;
-float rectangle_w;
-float rectangle_h;
-//triangle: colour, pos, size
-int triangle_r;
-int triangle_g;
-int triangle_b;
-float triangle_x;
-float triangle_y;
-//ellipse: colour, pos, size
-int ellipse_r;
-int ellipse_g;
-int ellipse_b;
-float ellipse_x;
-float ellipse_y;
-
 //constant variables
 
 //background color
@@ -147,74 +126,18 @@ void win()
 void redrawAllObjects(color bg_color)
 {
   background(bg_color);
-  fill(rectangle_r, rectangle_g, rectangle_b);
-  drawRect(rectangle_x, rectangle_y, rectangle_w, rectangle_h);
-  fill(triangle_r, triangle_g, triangle_b);
-  drawTri(triangle_x, triangle_y, triangle_x+28, triangle_y-55, triangle_x+56, triangle_y);
-  fill(ellipse_r, ellipse_g, ellipse_b);
-  drawElli(ellipse_x, ellipse_y, 55, 55);
+  drawRandPineapple();
+  drawRandApple();
 }
 
 void resetAll()
 {
-  player.object1_rectangle = false;
-  player.object2_triangle = false;
-  player.object3_ellipse = false;
+  player.object1_pineapple = false;
+  player.object2_apple = false;
   player.randomizePlayer();
-  drawRandRect();
-  drawRandTri();
-  drawRandElli();
+  drawRandPineapple();
+  drawRandApple();
   drawCornerEnemy();
-}
-
-//draw a randomly positioned and coloured rect (enemy)
-void drawRandRect()
-{
-  //randomize colour
-  rectangle_r = int(random(22, 222));//rand RGB colour for R
-  rectangle_g = int(random(22, 222));//rand RGB colour for G
-  rectangle_b = int(random(22, 222));//rand RGB colour for B
-  
-  //randomize position and size
-  rectangle_x = random(60, width - 60);//rand pos for the top left
-  rectangle_y = random(60, height - 60);
-  rectangle_w = random(33, 120);//random width
-  rectangle_h = random(33, 120);//random height
-
-  fill(rectangle_r, rectangle_g, rectangle_b);
-  drawRect(rectangle_x, rectangle_y, rectangle_w, rectangle_h);
-}
-
-//draw a randomly positioned and coloured triangle (enemy)
-void drawRandTri()
-{
- //randomize colour
- triangle_r = int(random(22, 222));//rand RGB colour for R
- triangle_g = int(random(22, 222));//rand RGB colour for G
- triangle_b = int(random(22, 222));//rand RGB colour for B
-  
- //randomize position and size
- triangle_x = random(60, width - 60);
- triangle_y = random(60, height - 60);
-
- fill(triangle_r, triangle_g, triangle_b);
- drawTri(triangle_x, triangle_y, triangle_x+28, triangle_y-55, triangle_x+56, triangle_y);
-}
-
-//draw a randomly positioned and coloured ellipse (enemy)
-void drawRandElli()
-{
- //randomize colour
- ellipse_r = int(random(22, 222));//rand RGB colour for R
- ellipse_g = int(random(22, 222));//rand RGB colour for G
- ellipse_b = int(random(22, 222));//rand RGB colour for B
-  
- //randomize position and size
- ellipse_x = random(60, width - 60);//rand pos for the top left
- ellipse_y = random(60, height - 60);
-
- fill(ellipse_r, ellipse_g, ellipse_b);
- drawElli(ellipse_x, ellipse_y, 55, 55);
 }
 
 void drawCornerEnemy()
@@ -244,21 +167,6 @@ void drawCornerEnemy()
   //bottom left
   fill(PURPLE4);
   drawEnemy(bottom_left_x, bottom_left_y);
-}
-
-void drawRect(float x, float y, float w, float h)
-{
-  rect(x, y, w, h);
-}
-
-void drawTri(float x_1, float y_1, float x_2, float y_2, float x_3, float y_3)
-{
-  triangle(x_1, y_1, x_2, y_2, x_3, y_3);
-}
-
-void drawElli(float x,float y, float w, float h)
-{
-  ellipse(x, y, w, h);
 }
 
 void drawEnemy(int x, int y)
