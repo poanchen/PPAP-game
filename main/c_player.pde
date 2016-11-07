@@ -80,47 +80,88 @@ class c_player
   boolean checkCollisionWithEnemy()
   {
     //check for collision with player
-       //top left point
-    if(dist(px, py, top_left_x, top_left_y-35) < pSz ||
-       //top right point
-       dist(px, py, top_left_x+76, top_left_y-35) < pSz ||
-       //bottom right point
-       dist(px, py, top_left_x+76, top_left_y+25) < pSz ||
-       //bottom left point
-       dist(px, py, top_left_x, top_left_y+25) < pSz)
+    //make sure the top left starting point for the enemy is the same with the pen
+    int new_top_left_x = top_left_x - 35;
+    int new_top_left_y = top_left_y - 19;
+    //make sure the top right starting point for the enemy is the same with the pen
+    int new_top_right_x = top_right_x - 35;
+    int new_top_right_y = top_right_y - 19;
+    //make sure the bottom right starting point for the enemy is the same with the pen
+    int new_bottom_right_x = bottom_right_x - 35;
+    int new_bottom_right_y = bottom_right_y - 19;
+    //make sure the bottom left starting point for the enemy is the same with the pen
+    int new_bottom_left_x = bottom_left_x - 35;
+    int new_bottom_left_y = bottom_left_y - 19;
+    //top left enemy
+    if(
+     //top left point of pen
+     (px >= new_top_left_x && px <= new_top_left_x+80 && py >= new_top_left_y && py <= new_top_left_y+77) ||
+     //top right point of pen
+     (px+17.5 >= new_top_left_x && px+17.5 <= new_top_left_x+80 && py >= new_top_left_y && py <= new_top_left_y+77) ||
+     //bottom right point of pen
+     (px+17.5 >= new_top_left_x && px+17.5 <= new_top_left_x+80 && py+98 >= new_top_left_y && py+98 <= new_top_left_y+77) ||
+     //bottom left point of pen
+     (px >= new_top_left_x && px <= new_top_left_x+80 && py+98 >= new_top_left_y && py+98 <= new_top_left_y+77) ||
+     //middle left point of pen
+     (px >= new_top_left_x && px <= new_top_left_x+80 && py+49 >= new_top_left_y && py+49 <= new_top_left_y+77) ||
+     //middle right point of pen
+     (px+17.5 >= new_top_left_x && px+17.5 <= new_top_left_x+80 && py+49 >= new_top_left_y && py+49 <= new_top_left_y+77)
+    )
     {
       top_left_speed = random(-9, 9);//randomize the bouncy square's angular speed to visually show the collision occur (user feedback)
       return true;//there was a collision
-             //top left point
-    }else if(dist(px, py, top_right_x, top_right_y-35) < pSz ||
-       //top right point
-       dist(px, py, top_right_x+76, top_right_y-35) < pSz ||
-       //bottom right point
-       dist(px, py, top_right_x+76, top_right_y+25) < pSz ||
-       //bottom left point
-       dist(px, py, top_right_x, top_right_y+25) < pSz)
+    //top right enemy
+    }else if(
+     //top left point of pen
+     (px >= new_top_right_x && px <= new_top_right_x+80 && py >= new_top_right_y && py <= new_top_right_y+77) ||
+     //top right point of pen
+     (px+17.5 >= new_top_right_x && px+17.5 <= new_top_right_x+80 && py >= new_top_right_y && py <= new_top_right_y+77) ||
+     //bottom right point of pen
+     (px+17.5 >= new_top_right_x && px+17.5 <= new_top_right_x+80 && py+98 >= new_top_right_y && py+98 <= new_top_right_y+77) ||
+     //bottom left point of pen
+     (px >= new_top_right_x && px <= new_top_right_x+80 && py+98 >= new_top_right_y && py+98 <= new_top_right_y+77) ||
+     //middle left point of pen
+     (px >= new_top_right_x && px <= new_top_right_x+80 && py+49 >= new_top_right_y && py+49 <= new_top_right_y+77) ||
+     //middle right point of pen
+     (px+17.5 >= new_top_right_x && px+17.5 <= new_top_right_x+80 && py+49 >= new_top_right_y && py+49 <= new_top_right_y+77)
+    )
     {
       top_right_speed = random(-9, 9);//randomize the bouncy square's angular speed to visually show the collision occur (user feedback)
       return true;//there was a collision
              //top left point
-    }else if(dist(px, py, bottom_right_x, bottom_right_y-35) < pSz ||
-       //top right point
-       dist(px, py, bottom_right_x+76, bottom_right_y-35) < pSz ||
-       //bottom right point
-       dist(px, py, bottom_right_x+76, bottom_right_y+25) < pSz ||
-       //bottom left point
-       dist(px, py, bottom_right_x, bottom_right_y+25) < pSz)
+    //bottom right enemy
+    }else if(
+     //top left point of pen
+     (px >= new_bottom_right_x && px <= new_bottom_right_x+80 && py >= new_bottom_right_y && py <= new_bottom_right_y+77) ||
+     //top right point of pen
+     (px+17.5 >= new_bottom_right_x && px+17.5 <= new_bottom_right_x+80 && py >= new_bottom_right_y && py <= new_bottom_right_y+77) ||
+     //bottom right point of pen
+     (px+17.5 >= new_bottom_right_x && px+17.5 <= new_bottom_right_x+80 && py+98 >= new_bottom_right_y && py+98 <= new_bottom_right_y+77) ||
+     //bottom left point of pen
+     (px >= new_bottom_right_x && px <= new_bottom_right_x+80 && py+98 >= new_bottom_right_y && py+98 <= new_bottom_right_y+77) ||
+     //middle left point of pen
+     (px >= new_bottom_right_x && px <= new_bottom_right_x+80 && py+49 >= new_bottom_right_y && py+49 <= new_bottom_right_y+77) ||
+     //middle right point of pen
+     (px+17.5 >= new_bottom_right_x && px+17.5 <= new_bottom_right_x+80 && py+49 >= new_bottom_right_y && py+49 <= new_bottom_right_y+77)
+    )
     {
       bottom_right_speed = random(-9, 9);//randomize the bouncy square's angular speed to visually show the collision occur (user feedback)
       return true;//there was a collision
-             //top left point
-    }else if(dist(px, py, bottom_left_x, bottom_left_y-35) < pSz ||
-       //top right point
-       dist(px, py, bottom_left_x+76, bottom_left_y-35) < pSz ||
-       //bottom right point
-       dist(px, py, bottom_left_x+76, bottom_left_y+25) < pSz ||
-       //bottom left point
-       dist(px, py, bottom_left_x, bottom_left_y+25) < pSz)
+    //bottom left
+    }else if(
+     //top left point of pen
+     (px >= new_bottom_left_x && px <= new_bottom_left_x+80 && py >= new_bottom_left_y && py <= new_bottom_left_y+77) ||
+     //top right point of pen
+     (px+17.5 >= new_bottom_left_x && px+17.5 <= new_bottom_left_x+80 && py >= new_bottom_left_y && py <= new_bottom_left_y+77) ||
+     //bottom right point of pen
+     (px+17.5 >= new_bottom_left_x && px+17.5 <= new_bottom_left_x+80 && py+98 >= new_bottom_left_y && py+98 <= new_bottom_left_y+77) ||
+     //bottom left point of pen
+     (px >= new_bottom_left_x && px <= new_bottom_left_x+80 && py+98 >= new_bottom_left_y && py+98 <= new_bottom_left_y+77) ||
+     //middle left point of pen
+     (px >= new_bottom_left_x && px <= new_bottom_left_x+80 && py+49 >= new_bottom_left_y && py+49 <= new_bottom_left_y+77) ||
+     //middle right point of pen
+     (px+17.5 >= new_bottom_left_x && px+17.5 <= new_bottom_left_x+80 && py+49 >= new_bottom_left_y && py+49 <= new_bottom_left_y+77)
+    )
     {
       bottom_left_speed = random(-9, 9);//randomize the bouncy square's angular speed to visually show the collision occur (user feedback)
       return true;//there was a collision

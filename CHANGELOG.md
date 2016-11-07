@@ -1,3 +1,8 @@
+v1.0.6 (2016-11-07)
+======
+
+* Worked on the collision dection between the pen and the enemy.
+
 v1.0.5 (2016-11-06)
 ======
 
