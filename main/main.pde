@@ -124,6 +124,7 @@ void redrawAllObjects(color bg_color)
   background(bg_color);
   drawPineappleAtPos();
   drawAppleAtPos();
+  drawWoodBoard();
 }
 
 void resetAll()
@@ -133,6 +134,7 @@ void resetAll()
   player.randomizePlayer();
   drawRandPineapple();
   drawRandApple();
+  drawWoodBoard();
   drawCornerEnemy();
 }
 

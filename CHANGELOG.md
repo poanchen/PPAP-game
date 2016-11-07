@@ -1,3 +1,8 @@
+v1.0.7 (2016-11-07)
+======
+
+* Added the wood board for pen's departure.
+
 v1.0.6 (2016-11-07)
 ======
 

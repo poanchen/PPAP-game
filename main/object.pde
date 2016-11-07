@@ -148,3 +148,38 @@ void drawEnemy(int x, int y)
   ellipse(50,79,15,2);//tongue
   popMatrix();
 }
+
+//wood Board as the landing and starting point of the pencil
+void drawWoodBoard()
+{
+  pushMatrix();
+  translate(player.px+5, player.py+20);
+  noStroke();
+  stroke(#93651B);//darkbrown
+  strokeWeight(3);//thick line
+  fill(#DBAF75);//light brown for board
+  rect(40,52,80,70);//wood board
+  noFill();
+  ellipse(60,36,10,8);//detail circle no. 1
+  ellipse(60,36,20,15);//detail circle no.1.1
+  ellipse(60,36,30,25);//detail circle no. 1.2
+  line(0,37,80,37);//detail line 1 on board
+  line(0,63,80,63);//detail line 2 on board
+  line(0,30,27,30);//detail line 3 on board
+  line(15,23,22,23);//detail line 4 on board
+  line(29,23,47,23);//detail line 5 on board
+  fill(#DBAF75);//light brown for board
+  rect(40,50,80,26);//wood board
+  noFill();
+  ellipse(26,47,15,2);//detail circle no.2
+  ellipse(26,47,24,10);//detail circle no.2.1
+  ellipse(26,47,38,18);//detail circle no.2.2
+  line(58,50,80,50);//detail line 6 on board
+  line(46,58,61,58);//detail line 7 on board
+  line(10,76,22,76);//detail line 8 on board
+  line(26,76,32,76);//detail line 9 on board
+  line(36,76,40,76);//detail line 10 on board
+  line(52,73,73,73);//detail line 11 on board
+  line(72,80,80,80);//detail line 12 on board
+  popMatrix();
+}
