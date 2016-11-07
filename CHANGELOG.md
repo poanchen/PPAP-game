@@ -1,3 +1,8 @@
+v1.0.4 (2016-11-06)
+======
+
+* Purple enemy has been replaced with the PPAP face.
+
 v1.0.3 (2016-11-06)
 ======
 
