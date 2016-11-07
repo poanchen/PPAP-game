@@ -1,3 +1,9 @@
+V1.0.10 (2016-11-07)
+======
+
+* Fixed the collision issue with the apple.
+* Added the "You Won!!" string when player won the game!
+
 v1.0.9 (2016-11-07)
 ======
 

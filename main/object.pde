@@ -180,7 +180,7 @@ void drawWoodBoard()
   popMatrix();
 }
 
-//Gameover symbol when player loses the game
+//Gameover symbol when player lost the game
 void drawGameOver()
 {
   noStroke();
@@ -204,4 +204,29 @@ void drawGameOver()
   text("e",680,280);//letter e
   fill(#E81E2C);//red
   text("r",710,280);
+}
+
+//Won symbol when player wons the game
+void drawWon()
+{
+  noStroke();
+  fill(#FFFFFF);//white
+  rect(590,250,500,100);///setting the size no bigger tahn this size
+  textSize(80);//Bigger Size FrontCharacter
+  fill(#2BCB0C);//green
+  text("Y",430,280);//letter Y
+  fill(#29AD23);//darker green
+  text("o",460,280);//letter o
+  fill(#324CD8);//darker blue
+  text("u",500,280);//letter u
+  fill(#E81E2C);//red
+  text("W",550,280);////LETTER W
+  fill(#F5D207);//yellowish orange
+  text("o",605,280);//letter o
+  fill(#1274FA);//blue
+  text("n",645,280);//letter n
+  fill(#E81E2C);//blue
+  text("!",685,280);//letter n
+  fill(#E81E2C);//blue
+  text("!",705,280);//letter n
 }

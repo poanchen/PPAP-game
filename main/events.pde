@@ -9,7 +9,7 @@ void mousePressed()
   }
   else if(mouseButton == LEFT)
   { 
-    if(isLost)
+    if(isLost || isWon)
     {
       resetObjects = true;
     }

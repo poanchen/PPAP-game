@@ -110,9 +110,9 @@ void lose()
 void win()
 {
   isRunning = false;
-  resetObjects = true;
   fc = 0;
   isWon = true;
+  drawWon();
 }
 
 void redrawAllObjects(color bg_color)

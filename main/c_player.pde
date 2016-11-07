@@ -181,8 +181,8 @@ class c_player
     int new_pineapple_x = pineapple_x + 93;
     int new_pineapple_y = pineapple_y - 2;
     //make sure the pineapple position is the same with the pen
-    int new_apple_x = apple_x + 33;
-    int new_apple_y = apple_y - 21;
+    int new_apple_x = apple_x + 248;
+    int new_apple_y = apple_y + 38;
     //make sure the pineapple position is the same with the pen
     int new_originalPx = int(originalPx - 43);
     int new_originalPy = int(originalPy - 18);
