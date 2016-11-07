@@ -14,18 +14,42 @@ class c_player
   boolean object1_pineapple = false;
   boolean object2_apple = false;
   
+  //Pen as the airplane control by player
+  void drawPlayer()
+  {
+    pushMatrix();
+    translate(px, py);
+    noStroke();
+    fill(#000000);//black
+    quad(39,97,52,97,54,107,37,107);//top of the pen part 1(shadow)
+    triangle(36,107,55,107,46,119);//top of the pen part 2(shadow)
+    fill(#D4E4FA);// light silver
+    quad(42,97,49,97,52,107,39,107);//top of the pen part 1
+    triangle(39,105,52,105,46,113);//top of the pen part 2
+    stroke(#000000);//black
+    strokeWeight(3);//stroke weight thick
+    ellipse(45,103,2,2);//detail on top of the pen part1
+    strokeWeight(1.5);//stroke weight thin/
+    line(45,100,45,118);//detail on the top of the pen part2
+    strokeWeight(3);//stroke weight thick
+    fill(#D0E3E8);///silver
+    ellipse(45,30,18,18);//end of the pen
+    fill(#1153AD);//dark blue
+    rect(45,60,17.5,55);//body of the pen
+    fill(#0B3C7E);//darker blue
+    rect(42.5,60,4,55);//shadow of pen's body
+    rect(52.5,60,4,55);//shadow of pen's body
+    fill(#71A7F2);//lightblue
+    quad(37,90,51,90,49,95,39,95);//space between pen's body and top of the pen
+    fill(#D4E4FA);// light silver
+    popMatrix();
+  }
+  
   //randomize player pos in the screen
   void randomizePlayer()
   {
-    px = random(BUFFSPACE, width - BUFFSPACE);//randomize pos
+    px = random(BUFFSPACE, width - BUFFSPACE);
     py = random(BUFFSPACE, height - BUFFSPACE);
-  }
-  
-  //draw the player
-  void drawPlayer()
-  {
-    fill(ORANGE);//orange
-    ellipse(px, py, 11, 11);
   }
   
   //move player to follow the mouse

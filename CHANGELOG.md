@@ -1,3 +1,8 @@
+v1.0.5 (2016-11-06)
+======
+
+* Yellow dot has been replaced with the Pen.
+
 v1.0.4 (2016-11-06)
 ======
 
