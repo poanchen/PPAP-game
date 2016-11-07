@@ -179,3 +179,29 @@ void drawWoodBoard()
   line(72,80,80,80);//detail line 12 on board
   popMatrix();
 }
+
+//Gameover symbol when player loses the game
+void drawGameOver()
+{
+  noStroke();
+  fill(#FFFFFF);//white
+  rect(590,250,300,100);///setting the size no bigger tahn this size
+  textSize(80);//Bigger Size FrontCharacter
+  fill(#E81E2C);//red
+  text("G",450,280);////LETTER G
+  fill(#F5D207);//yellowish orange
+  text("O",600,280);//letter O
+  textSize(70);//smaller size other Character
+  fill(#1274FA);//blue
+  text("a",495,280);//letter a
+  fill(#FAE70F);//yellow
+  text("m",530,280);//letter m
+  fill(#2BCB0C);//green
+  text("e",575,280);//letter e
+  fill(#29AD23);//darker green
+  text("v",660,280);//letter v
+  fill(#324CD8);//darker blue
+  text("e",680,280);//letter e
+  fill(#E81E2C);//red
+  text("r",710,280);
+}

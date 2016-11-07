@@ -1,3 +1,9 @@
+v1.0.9 (2016-11-07)
+======
+
+* Added the gameover word when player lost the game.
+* Made game to stop when player lost instead of restarting a new game.
+
 v1.0.8 (2016-11-07)
 ======
 

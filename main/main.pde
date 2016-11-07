@@ -6,6 +6,7 @@ boolean isRunning = false;//if game is running, things move
 boolean resetObjects = false;//if user right clicked the mouse, we then reset the position of all the objects
 boolean isLost = false;
 boolean isWon = false;
+PFont font;
 
 //enemy position
 //top left
@@ -42,6 +43,9 @@ void setup()
   size(1200, 900);//set window size
   rectMode(CENTER);
   background(LIGHTBLUE);
+  //load the font for gameover
+  font=loadFont("Bauhaus93-48.vlw");
+  textFont(font,48);
   resetAll();
 }
 
@@ -80,16 +84,6 @@ void draw()
       secLeft = 30 - toSec;
       println("You already spent " + toSec + " seconds. And, you have " + secLeft + " seconds left!");
     }
-    
-    if(isLost)
-    {
-      isLost = false;
-    }
-    
-    if(isWon)
-    {
-      isWon = false;
-    }
   }
   
   if(resetObjects)
@@ -97,6 +91,8 @@ void draw()
     background(LIGHTBLUE);
     resetAll();
     resetObjects = false;
+    isLost = false;
+    isWon = false;
   }
 
   player.drawPlayer();
@@ -106,9 +102,9 @@ void draw()
 void lose()
 {
   isRunning = false;
-  resetObjects = true;
   fc = 0;
   isLost = true;
+  drawGameOver();
 }
 
 void win()
