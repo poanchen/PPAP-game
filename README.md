@@ -5,6 +5,7 @@ Simple top-down view game.
 - [Processing](https://processing.org/download/)
 
 ## Demo
+![Loading the first image](demo.gif)
 ![Loading the first image](demo.PNG)
 
 ## Authors
