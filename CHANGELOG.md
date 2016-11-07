@@ -1,3 +1,9 @@
+V1.0.11 (2016-11-07)
+======
+
+* Added the countdown clock on the top. So, player is aware of the time.
+* Added the leader board where player may see their personal best score!
+
 V1.0.10 (2016-11-07)
 ======
 

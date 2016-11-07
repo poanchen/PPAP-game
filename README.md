@@ -1,4 +1,4 @@
-# put-out-the-enemy v1.0.10
+# put-out-the-enemy v1.0.11
 Simple top-down view game.
 
 ## Requirements

@@ -230,3 +230,73 @@ void drawWon()
   fill(#E81E2C);//blue
   text("!",705,280);//letter n
 }
+
+//elapse time for player
+void drawTime()
+{
+  noStroke();
+  fill(#FFFFFF);//white
+  rect(590,50,100,100);///setting the size no bigize
+  textSize(80);//Bigger Size FrontCharacter
+  fill(#E81E2C);//red
+  text(30-fc/60,545,80);////LETTER W
+}
+
+//draw the leader board so that they know their best score
+void drawLeaderBoard()
+{
+  int j = 1;
+  int startX = 400;
+  int startY = 500;
+  int [] sortedBestScore;
+  
+  try 
+  {
+   bestScore.sort();
+   sortedBestScore = bestScore.array();
+  } catch (NullPointerException e) 
+  {
+    sortedBestScore = null;
+  }
+  
+  int lengthOfBestScore;
+  
+  if(sortedBestScore == null)
+  {
+    lengthOfBestScore = 0;
+  }else
+  {
+    lengthOfBestScore = sortedBestScore.length;
+  }
+  
+  noStroke();
+  fill(#FFFFFF);//white
+  rect(590,600,500,450);///setting the size no bigger tahn this size
+  textSize(80);//Bigger Size FrontCharacter
+  fill(#324CD8);//darker blue
+  text("Best Score",startX,startY);//Best Score
+  
+  for (int i = lengthOfBestScore; i >= 0 || j < 4; i = i - 1)
+  {
+    if(j < 4)
+    {
+      fill(#E81E2C);//yellowish orange
+      text(j+":",startX+80,startY+j*100);
+      fill(#324CD8);//yellowish orange
+      try 
+      {
+        if(lengthOfBestScore == 0 || sortedBestScore == null)
+        {
+          text("Empty",startX+180,startY+j*100);
+        }else
+        {
+          text(sortedBestScore[i-1],startX+180,startY+j*100);
+        }
+      } catch (ArrayIndexOutOfBoundsException e) 
+      {
+        text("Empty",startX+180,startY+j*100);
+      }
+      j = j + 1; 
+    }
+  }
+}

@@ -2,6 +2,7 @@
 int fc = 0;//frame counter, 60x per sec
 int toSec = 0;
 int secLeft = 0;
+IntList bestScore = new IntList();
 boolean isRunning = false;//if game is running, things move
 boolean resetObjects = false;//if user right clicked the mouse, we then reset the position of all the objects
 boolean isLost = false;
@@ -34,6 +35,8 @@ float bottom_left_y_v = random(-5, 5);
 
 //background color
 color LIGHTBLUE = #CCEEFF;
+color WON_COLOR = #FFB6C1;
+color LOST_COLOR = #7F0000;
 
 //player object
 c_player player = new c_player();
@@ -97,6 +100,7 @@ void draw()
 
   player.drawPlayer();
   drawMovingEnemy();
+  drawTime();
 }
 
 void lose()
@@ -104,15 +108,24 @@ void lose()
   isRunning = false;
   fc = 0;
   isLost = true;
+  redrawAllObjects(LOST_COLOR);
   drawGameOver();
+  drawLeaderBoard();
 }
 
 void win()
 {
   isRunning = false;
+  int score = int(30-(fc/60));
+  if(score < 30)
+  {
+    bestScore.append(score);
+  }
   fc = 0;
   isWon = true;
+  redrawAllObjects(WON_COLOR);
   drawWon();
+  drawLeaderBoard();
 }
 
 void redrawAllObjects(color bg_color)
@@ -132,6 +145,7 @@ void resetAll()
   drawRandApple();
   drawWoodBoard();
   drawCornerEnemy();
+  drawTime();
 }
 
 void drawCornerEnemy()

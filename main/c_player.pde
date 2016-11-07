@@ -185,7 +185,7 @@ class c_player
     int new_apple_y = apple_y + 38;
     //make sure the pineapple position is the same with the pen
     int new_originalPx = int(originalPx - 43);
-    int new_originalPy = int(originalPy - 18);
+    int new_originalPy = int(originalPy + 8);
     //check if player touch down any of the object
     //check for pineapple
     if(
