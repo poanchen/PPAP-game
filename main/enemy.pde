@@ -140,7 +140,6 @@ void drawMovingEnemy()
   {
     pushMatrix();
     //top left
-    fill(PURPLE1);
     top_left_angle += top_left_speed;
     translate(top_left_x, top_left_y);//put it back
     rotate(radians(top_left_angle));//rotate
@@ -149,7 +148,6 @@ void drawMovingEnemy()
     popMatrix();
     pushMatrix();
     //top right
-    fill(PURPLE2);
     top_right_angle += top_right_speed;
     translate(top_right_x, top_right_y);//put it back
     rotate(radians(top_right_angle));//rotate
@@ -158,7 +156,6 @@ void drawMovingEnemy()
     popMatrix();
     pushMatrix();
     //bottom right
-    fill(PURPLE3);
     bottom_right_angle += bottom_right_speed;
     translate(bottom_right_x, bottom_right_y);//put it back
     rotate(radians(bottom_right_angle));//rotate
@@ -167,7 +164,6 @@ void drawMovingEnemy()
     popMatrix();
     pushMatrix();
     //bottom left
-    fill(PURPLE4);
     bottom_left_angle += bottom_left_speed;
     translate(bottom_left_x, bottom_left_y);//put it back
     rotate(radians(bottom_left_angle));//rotate

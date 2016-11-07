@@ -9,23 +9,23 @@ boolean isWon = false;
 
 //enemy position
 //top left
-int top_left_x = 40;
-int top_left_y = 30;
+int top_left_x = 0;
+int top_left_y = 0;
 float top_left_x_v = random(-5, 5);
 float top_left_y_v = random(-5, 5);
 //top right
-int top_right_x = 1160;
-int top_right_y = 30;
+int top_right_x = 1100;
+int top_right_y = 0;
 float top_right_x_v = random(-5, 5);
 float top_right_y_v = random(-5, 5);
 //bottom right
-int bottom_right_x = 1160;
-int bottom_right_y = 860;
+int bottom_right_x = 1100;
+int bottom_right_y = 800;
 float bottom_right_x_v = random(-5, 5);
 float bottom_right_y_v = random(-5, 5);
 //bottom left
-int bottom_left_x = 40;
-int bottom_left_y = 860;
+int bottom_left_x = 0;
+int bottom_left_y = 800;
 float bottom_left_x_v = random(-5, 5);
 float bottom_left_y_v = random(-5, 5);
 
@@ -33,10 +33,6 @@ float bottom_left_y_v = random(-5, 5);
 
 //background color
 color LIGHTBLUE = #CCEEFF;
-color PURPLE1 = #551A28;
-color PURPLE2 = #551A3C;
-color PURPLE3 = #551A50;
-color PURPLE4 = #551A6E;
 
 //player object
 c_player player = new c_player();
@@ -126,8 +122,8 @@ void win()
 void redrawAllObjects(color bg_color)
 {
   background(bg_color);
-  drawRandPineapple();
-  drawRandApple();
+  drawPineappleAtPos();
+  drawAppleAtPos();
 }
 
 void resetAll()
@@ -143,33 +139,24 @@ void resetAll()
 void drawCornerEnemy()
 {
   //top left
-  top_left_x = 40;
-  top_left_y = 30;
+  top_left_x = 0;
+  top_left_y = 0;
   //top right
-  top_right_x = 1160;
-  top_right_y = 30;
+  top_right_x = 1100;
+  top_right_y = 0;
   //bottom right
-  bottom_right_x = 1160;
-  bottom_right_y = 860;
+  bottom_right_x = 1100;
+  bottom_right_y = 800;
   //bottom left
-  bottom_left_x = 40;
-  bottom_left_y = 860;
+  bottom_left_x = 0;
+  bottom_left_y = 800;
 
   //top left
-  fill(PURPLE1);
   drawEnemy(top_left_x, top_left_y);
   //top right
-  fill(PURPLE2);
   drawEnemy(top_right_x, top_right_y);
   //bottom right
-  fill(PURPLE3);
   drawEnemy(bottom_right_x, bottom_right_y);
   //bottom left
-  fill(PURPLE4);
   drawEnemy(bottom_left_x, bottom_left_y);
-}
-
-void drawEnemy(int x, int y)
-{
-  arc(x, y, 80, 80, 0, PI+QUARTER_PI, PIE);
 }

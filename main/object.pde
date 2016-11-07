@@ -43,6 +43,15 @@ void drawPineapple()
   line(136,76,158,109);//detail line 6
 }
 
+//pineapple as passing point 1 at pos pineapple_x and pineapple_y
+void drawPineappleAtPos()
+{
+  pushMatrix();
+  translate(pineapple_x, pineapple_y);
+  drawPineapple();
+  popMatrix();
+}
+
 //draw a randomly positioned pineapple (object)
 void drawRandPineapple()
 {
@@ -51,6 +60,15 @@ void drawRandPineapple()
   pineapple_y = int(random(0, height - 120));
   translate(pineapple_x, pineapple_y);
   drawPineapple();
+  popMatrix();
+}
+
+//apple as passing point 2 at pos apple_x and apple_y
+void drawAppleAtPos()
+{
+  pushMatrix();
+  translate(apple_x, apple_y);
+  drawApple();
   popMatrix();
 }
 
@@ -88,5 +106,41 @@ void drawRandApple()
   apple_y = int(random(0, height - 120));
   translate(apple_x, apple_y);
   drawApple();
+  popMatrix();
+}
+
+//singer as the enemy goes around 
+void drawEnemy(int x, int y)
+{
+  pushMatrix();
+  translate(x, y);
+  noStroke();
+  fill(#B4EDC4);//light green
+  fill(#000000);//black hair colour
+  rect(50,37,80,50);//hair part 1
+  fill(#FADA9A);//face colour
+  rect(50,60,76,60);//face
+  fill(#000000);//black hair colour
+  rect(16,27,12,30);//hair part 2
+  rect(84,27,12,30);//hair part 3
+  stroke(#FFFFFF);//white glass
+  strokeWeight(2);
+  fill(#C9C6BF,110);//faint glasses colour
+  line(10,50,90,50);//line for the glass frame
+  quad(55,50,85,50,83,65,57,65);//left glass
+  quad(15,50,45,50,43,65,17,65);//left glass
+  stroke(#000000);//black for eyebrow and mustache
+  strokeWeight(5);//heavy eyebrow
+  line(22,41,41,38);//left eyebrow
+  line(60,43,77,45);//right eyebrow
+  strokeWeight(2);
+  line(38,72,48,72);//left mustache
+  line(52,72,62,72);//right mustache
+  fill(#000000);//black colour for mouth
+  rect(50,77,20,2); //mouth part 1
+  ellipse(50,79,20,3);//mouth part 2
+  noStroke();
+  fill(#AD031A);// red colour for tongue
+  ellipse(50,79,15,2);//tongue
   popMatrix();
 }

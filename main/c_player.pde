@@ -56,22 +56,50 @@ class c_player
   boolean checkCollisionWithEnemy()
   {
     //check for collision with player
-    if(dist(px, py, top_left_x, top_left_y) < pSz)
+       //top left point
+    if(dist(px, py, top_left_x, top_left_y-35) < pSz ||
+       //top right point
+       dist(px, py, top_left_x+76, top_left_y-35) < pSz ||
+       //bottom right point
+       dist(px, py, top_left_x+76, top_left_y+25) < pSz ||
+       //bottom left point
+       dist(px, py, top_left_x, top_left_y+25) < pSz)
     {
       top_left_speed = random(-9, 9);//randomize the bouncy square's angular speed to visually show the collision occur (user feedback)
-      return true;//there was a collision        
-    }else if(dist(px, py, top_right_x, top_right_y) < pSz)
+      return true;//there was a collision
+             //top left point
+    }else if(dist(px, py, top_right_x, top_right_y-35) < pSz ||
+       //top right point
+       dist(px, py, top_right_x+76, top_right_y-35) < pSz ||
+       //bottom right point
+       dist(px, py, top_right_x+76, top_right_y+25) < pSz ||
+       //bottom left point
+       dist(px, py, top_right_x, top_right_y+25) < pSz)
     {
       top_right_speed = random(-9, 9);//randomize the bouncy square's angular speed to visually show the collision occur (user feedback)
-      return true;//there was a collision        
-    }else if(dist(px, py, bottom_right_x, bottom_right_y) < pSz)
+      return true;//there was a collision
+             //top left point
+    }else if(dist(px, py, bottom_right_x, bottom_right_y-35) < pSz ||
+       //top right point
+       dist(px, py, bottom_right_x+76, bottom_right_y-35) < pSz ||
+       //bottom right point
+       dist(px, py, bottom_right_x+76, bottom_right_y+25) < pSz ||
+       //bottom left point
+       dist(px, py, bottom_right_x, bottom_right_y+25) < pSz)
     {
       bottom_right_speed = random(-9, 9);//randomize the bouncy square's angular speed to visually show the collision occur (user feedback)
-      return true;//there was a collision        
-    }else if(dist(px, py, bottom_left_x, bottom_left_y) < pSz)
+      return true;//there was a collision
+             //top left point
+    }else if(dist(px, py, bottom_left_x, bottom_left_y-35) < pSz ||
+       //top right point
+       dist(px, py, bottom_left_x+76, bottom_left_y-35) < pSz ||
+       //bottom right point
+       dist(px, py, bottom_left_x+76, bottom_left_y+25) < pSz ||
+       //bottom left point
+       dist(px, py, bottom_left_x, bottom_left_y+25) < pSz)
     {
       bottom_left_speed = random(-9, 9);//randomize the bouncy square's angular speed to visually show the collision occur (user feedback)
-      return true;//there was a collision        
+      return true;//there was a collision
     }
     
     return false;//no collision detected
