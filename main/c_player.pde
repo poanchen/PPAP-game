@@ -3,6 +3,8 @@ class c_player
   int pSz = 30;//player size
   float px;//player's x position
   float py;//player's y position
+  float originalPx;//player's original x position
+  float originalPy;//player's original y position
   float pSpd = 2.5;//player's speed (used for horizontal and vertical movements)
   
   final int BUFFSPACE = 40;//constant for the space around the starting place for the player
@@ -50,6 +52,8 @@ class c_player
   {
     px = random(BUFFSPACE, width - BUFFSPACE);
     py = random(BUFFSPACE, height - BUFFSPACE);
+    originalPx = px;
+    originalPy = py;
   }
   
   //move player to follow the mouse
@@ -173,18 +177,72 @@ class c_player
   //see if player collided with any one of the object
   boolean touchDownWithObject()
   {
+    //make sure the pineapple position is the same with the pen
+    int new_pineapple_x = pineapple_x + 93;
+    int new_pineapple_y = pineapple_y - 2;
+    //make sure the pineapple position is the same with the pen
+    int new_apple_x = apple_x + 33;
+    int new_apple_y = apple_y - 21;
+    //make sure the pineapple position is the same with the pen
+    int new_originalPx = int(originalPx - 43);
+    int new_originalPy = int(originalPy - 18);
     //check if player touch down any of the object
-    if(dist(px, py, pineapple_x, pineapple_y) < pSz)
+    //check for pineapple
+    if(
+     //top left point of pen
+     (px >= new_pineapple_x && px <= new_pineapple_x && py >= new_pineapple_y && py <= new_pineapple_y+90) ||
+     //top right point of pen
+     (px+17.5 >= new_pineapple_x && px+17.5 <= new_pineapple_x+60 && py >= new_pineapple_y && py <= new_pineapple_y+90) ||
+     //bottom right point of pen
+     (px+17.5 >= new_pineapple_x && px+17.5 <= new_pineapple_x+60 && py+98 >= new_pineapple_y && py+98 <= new_pineapple_y+90) ||
+     //bottom left point of pen
+     (px >= new_pineapple_x && px <= new_pineapple_x+60 && py+98 >= new_pineapple_y && py+98 <= new_pineapple_y+90) ||
+     //middle left point of pen
+     (px >= new_pineapple_x && px <= new_pineapple_x+60 && py+49 >= new_pineapple_y && py+49 <= new_pineapple_y+90) ||
+     //middle right point of pen
+     (px+17.5 >= new_pineapple_x && px+17.5 <= new_pineapple_x+60 && py+49 >= new_pineapple_y && py+49 <= new_pineapple_y+90)
+    )
     {
       object1_pineapple = true;
-    }else if(dist(px, py, apple_x, apple_y) < pSz)
+    //check for apple
+    }else if(
+     //top left point of pen
+     (px >= new_apple_x && px <= new_apple_x+60 && py >= new_apple_y && py <= new_apple_y+80) ||
+     //top right point of pen
+     (px+17.5 >= new_apple_x && px+17.5 <= new_apple_x+60 && py >= new_apple_y && py <= new_apple_y+80) ||
+     //bottom right point of pen
+     (px+17.5 >= new_apple_x && px+17.5 <= new_apple_x+60 && py+98 >= new_apple_y && py+98 <= new_apple_y+80) ||
+     //bottom left point of pen
+     (px >= new_apple_x && px <= new_apple_x+60 && py+98 >= new_apple_y && py+98 <= new_apple_y+80) ||
+     //middle left point of pen
+     (px >= new_apple_x && px <= new_apple_x+60 && py+49 >= new_apple_y && py+49 <= new_apple_y+80) ||
+     //middle right point of pen
+     (px+17.5 >= new_apple_x && px+17.5 <= new_apple_x+60 && py+49 >= new_apple_y && py+49 <= new_apple_y+80)
+    )
     {
       object2_apple = true;
     }
 
     if(object1_pineapple && object2_apple)
     {
-      return true;
+      //check for wood board
+      if(
+        //top left point of pen
+        (px >= new_originalPx && px <= new_originalPx+83 && py >= new_originalPy && py <= new_originalPy+112) ||
+        //top right point of pen
+        (px+17.5 >= new_originalPx && px+17.5 <= new_originalPx+83 && py >= new_originalPy && py <= new_originalPy+112) ||
+        //bottom right point of pen
+        (px+17.5 >= new_originalPx && px+17.5 <= new_originalPx+83 && py+98 >= new_originalPy && py+98 <= new_originalPy+112) ||
+        //bottom left point of pen
+        (px >= new_originalPx && px <= new_originalPx+83 && py+98 >= new_originalPy && py+98 <= new_originalPy+112) ||
+        //middle left point of pen
+        (px >= new_originalPx && px <= new_originalPx+83 && py+49 >= new_originalPy && py+49 <= new_originalPy+112) ||
+        //middle right point of pen
+        (px+17.5 >= new_originalPx && px+17.5 <= new_originalPx+83 && py+49 >= new_originalPy && py+49 <= new_originalPy+112)
+      )
+      {
+        return true;
+      }
     }
 
     return false;

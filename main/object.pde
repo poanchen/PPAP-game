@@ -117,13 +117,9 @@ void drawEnemy(int x, int y)
   noStroke();
   fill(#B4EDC4);//light green
   fill(#000000);//black hair colour
-  //point(10, 13);
   rect(50,37,80,50);//hair part 1
-  //point(90, 13);
   fill(#FADA9A);//face colour
   rect(50,60,76,60);//face
-  //point(10, 90);
-  //point(90, 90);
   fill(#000000);//black hair colour
   rect(16,27,12,30);//hair part 2
   rect(84,27,12,30);//hair part 3
@@ -153,7 +149,7 @@ void drawEnemy(int x, int y)
 void drawWoodBoard()
 {
   pushMatrix();
-  translate(player.px+5, player.py+20);
+  translate(player.originalPx+5, player.originalPy+20);
   noStroke();
   stroke(#93651B);//darkbrown
   strokeWeight(3);//thick line

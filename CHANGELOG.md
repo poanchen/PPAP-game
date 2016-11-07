@@ -1,3 +1,9 @@
+v1.0.8 (2016-11-07)
+======
+
+* Fixed that the wood board would follow the pen.
+* You win by starting from the wood board, go to apple, then go to pineapple, and then go back to the wood board then you are finished!
+
 v1.0.7 (2016-11-07)
 ======
 

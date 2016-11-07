@@ -1,2 +1,2 @@
-# put-out-the-enemy v1.0.7
+# put-out-the-enemy v1.0.8
 Simple top-down view game.
