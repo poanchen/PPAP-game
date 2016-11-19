@@ -12,4 +12,4 @@ Initially, four enemies (Pico Taro's face) will start at the corners. In the sta
 [Poan Chen](https://github.com/poanchen) and Mandy.
 
 ## Disclaimer
-The theme of the game is based on the YouTube video named Pen-Pineapple-Apple-Pen/PIKO-TARO by [公式ピコ太郎歌唱ビデオチャンネル -PIKOTARO OFFICIAL CHANNEL-](https://www.youtube.com/channel/UCKpIOnsk-gcwHXIzuk24ExA).
+The theme of the game is based on the YouTube video named [Pen-Pineapple-Apple-Pen/PIKO-TARO](https://www.youtube.com/watch?v=0E00Zuayv9Q) by [公式ピコ太郎歌唱ビデオチャンネル -PIKOTARO OFFICIAL CHANNEL-](https://www.youtube.com/channel/UCKpIOnsk-gcwHXIzuk24ExA).
